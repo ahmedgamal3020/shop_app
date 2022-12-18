@@ -9,7 +9,7 @@ import 'package:shop/layout/cubit/cubit.dart';
 import 'package:shop/layout/cubit/states.dart';
 import 'package:shop/models/categories_model.dart';
 import 'package:shop/models/home_model.dart';
-import 'package:shop/screens/products/view_prodect_screen.dart';
+import 'package:shop/modules/screens/products/view_prodect_screen.dart';
 import 'package:shop/style/color.dart';
 
 class ProductsScreen extends StatelessWidget {

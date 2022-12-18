@@ -3,20 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop/conponents/conponents.dart';
 import 'package:shop/conponents/constants.dart';
-import 'package:shop/layout/cubit/cubit.dart';
 import 'package:shop/layout/layout_screen.dart';
-import 'package:shop/login_Screen/cubit/cubit.dart';
-import 'package:shop/login_Screen/cubit/states.dart';
+import 'package:shop/modules/login_Screen/cubit/cubit.dart';
+import 'package:shop/modules/login_Screen/cubit/states.dart';
+import 'package:shop/modules/register_screen/register.dart';
 import 'package:shop/network/local/cache_helper.dart';
-import 'package:shop/register_screen/register.dart';
 
-class LoginScreen extends StatelessWidget {
-   LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+   const LoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
 
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController =TextEditingController();
+
   TextEditingController passwordController =TextEditingController();
+
   var formKey =GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context)
   {
@@ -37,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                       message: state.model.message!);
 
                 });
-                 navigateAndFinish(context,  HomeScreen());
+                  navigateAndFinish(context,const HomeScreen());
 
               }else{
                 defaultToast(
@@ -142,7 +148,7 @@ class LoginScreen extends StatelessWidget {
                           defaultTextButton(
                               onPressed:()
                           {
-                            navigateTo(context, RegisterScreen());
+                            navigateTo(context,const RegisterScreen());
                           },
                               text:'Register'
                           ),

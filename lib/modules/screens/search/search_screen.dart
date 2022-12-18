@@ -5,11 +5,18 @@ import 'package:shop/conponents/conponents.dart';
 import 'package:shop/layout/cubit/cubit.dart';
 import 'package:shop/layout/cubit/states.dart';
 
-class SearchScreen extends StatelessWidget {
-   SearchScreen({Key? key}) : super(key: key);
+class SearchScreen extends StatefulWidget {
+   const SearchScreen({Key? key}) : super(key: key);
 
+  @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
    var searchController=TextEditingController();
+
    var formKey =GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return  BlocConsumer<ShopCubit,ShopStates>(
@@ -63,6 +70,4 @@ class SearchScreen extends StatelessWidget {
       );
 
   }
-
-
 }

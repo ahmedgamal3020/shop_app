@@ -10,12 +10,12 @@ import 'package:shop/models/favorites_model.dart';
 import 'package:shop/models/home_model.dart';
 import 'package:shop/models/login_model.dart';
 import 'package:shop/models/search_model.dart';
+import 'package:shop/modules/screens/categories/categories_screen.dart';
+import 'package:shop/modules/screens/favorites/favorites_screen.dart';
+import 'package:shop/modules/screens/products/porducts_screen.dart';
+import 'package:shop/modules/screens/settings/settings_screen.dart';
 import 'package:shop/network/end_point/end_point.dart';
 import 'package:shop/network/remote/die_helper.dart';
-import 'package:shop/screens/categories/categories_screen.dart';
-import 'package:shop/screens/favorites/favorites_screen.dart';
-import 'package:shop/screens/products/porducts_screen.dart';
-import 'package:shop/screens/settings/settings_screen.dart';
 
 class ShopCubit extends Cubit<ShopStates>{
 
@@ -27,10 +27,10 @@ class ShopCubit extends Cubit<ShopStates>{
 
 
   int currentIndex=0;
-  List<Widget> bottomNavScreens=[
+  List<Widget> bottomNavScreens=const [
 
-    const ProductsScreen(),
-    const CategoriesScreen(),
+     ProductsScreen(),
+     CategoriesScreen(),
      FavoritesScreen(),
      SettingsScreen(),
 

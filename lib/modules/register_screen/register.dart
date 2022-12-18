@@ -4,20 +4,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop/conponents/conponents.dart';
 import 'package:shop/conponents/constants.dart';
-import 'package:shop/layout/cubit/cubit.dart';
 import 'package:shop/layout/layout_screen.dart';
+import 'package:shop/modules/register_screen/cubit/cubit.dart';
+import 'package:shop/modules/register_screen/cubit/states.dart';
 import 'package:shop/network/local/cache_helper.dart';
-import 'package:shop/register_screen/cubit/cubit.dart';
-import 'package:shop/register_screen/cubit/states.dart';
 
-class RegisterScreen extends StatelessWidget {
-   RegisterScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const  RegisterScreen({Key? key}) : super(key: key);
 
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
 
+class _RegisterScreenState extends State<RegisterScreen> {
   var nameController =TextEditingController();
+
   var emailController =TextEditingController();
+
   var phoneController =TextEditingController();
+
   var passwordController =TextEditingController();
+
   var formKey =GlobalKey<FormState>();
 
   @override
@@ -41,7 +48,7 @@ class RegisterScreen extends StatelessWidget {
                       message: state.registerModel.message!);
 
                 });
-                navigateAndFinish(context,  HomeScreen());
+                navigateAndFinish(context,const HomeScreen());
 
               }else{
                 defaultToast(

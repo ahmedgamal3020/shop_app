@@ -6,18 +6,24 @@ import 'package:shop/conponents/conponents.dart';
 import 'package:shop/conponents/constants.dart';
 import 'package:shop/layout/cubit/cubit.dart';
 import 'package:shop/layout/cubit/states.dart';
-import 'package:shop/register_screen/cubit/states.dart';
+import 'package:shop/modules/register_screen/cubit/states.dart';
 
-class SettingsScreen extends StatelessWidget {
-   SettingsScreen({Key? key}) : super(key: key);
+class SettingsScreen extends StatefulWidget {
+ const  SettingsScreen({Key? key}) : super(key: key);
 
-  TextEditingController? nameController =TextEditingController();
-  TextEditingController? emailController =TextEditingController();
-  TextEditingController? phoneController =TextEditingController();
   @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
 
+class _SettingsScreenState extends State<SettingsScreen> {
+  TextEditingController? nameController =TextEditingController();
+
+  TextEditingController? emailController =TextEditingController();
+
+  TextEditingController? phoneController =TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-
 
     return BlocConsumer<ShopCubit,ShopStates>(
         listener: (context,state){

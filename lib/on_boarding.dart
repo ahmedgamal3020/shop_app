@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:shop/conponents/conponents.dart';
+import 'package:shop/modules/login_Screen/login_screen.dart';
 import 'package:shop/network/local/cache_helper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'login_Screen/login_screen.dart';
 import 'style/color.dart';
 class BoardingModel{
   final String image;
@@ -28,16 +28,16 @@ class _OnBoardingState extends State<OnBoarding> {
   List<BoardingModel>boarding=[
     BoardingModel(
         image: 'https://elearningindustry.com/wp-content/uploads/2021/10/a-successful-remote-onboarding-guide.jpg',
-        title: 'on board 1 Title ',
-        body: 'on board 1 body '),
+        title: 'Welcome to Shop ',
+        body: 'shop from a wide selection of grocery items from top brands' ),
     BoardingModel(
         image: 'https://elearningindustry.com/wp-content/uploads/2021/10/a-successful-remote-onboarding-guide.jpg',
-        title: 'on board 2 Title ',
-        body: 'on board 2 body '),
+        title: 'Amazing Discounts & Offers ',
+        body: 'cheaper prices then your local supermarket great discount '),
     BoardingModel(
         image: 'https://elearningindustry.com/wp-content/uploads/2021/10/a-successful-remote-onboarding-guide.jpg',
-        title: 'on board 3 Title ',
-        body: 'on board 3 body '),
+        title: 'Speedy Doorstep Delivery ',
+        body: 'guaranteed some day delivery of groceries'),
 
   ];
   PageController pageController=PageController();
@@ -47,7 +47,7 @@ class _OnBoardingState extends State<OnBoarding> {
 
       if(value){
 
-        navigateAndFinish(context, LoginScreen());
+        navigateAndFinish(context,const LoginScreen());
       }
     });
   }

@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop/conponents/conponents.dart';
 import 'package:shop/layout/cubit/cubit.dart';
 import 'package:shop/layout/cubit/states.dart';
-import 'package:shop/screens/search/search_screen.dart';
+import 'package:shop/modules/screens/search/search_screen.dart';
 
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({Key? key}) : super(key: key);
+   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                 actions: [
                   IconButton(
                       onPressed:(){
-                        navigateTo(context, SearchScreen());
+                        navigateTo(context,const SearchScreen());
                       }, icon:(const Icon(Icons.search))
                   )
                 ]

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop/conponents/constants.dart';
 import 'package:shop/layout/cubit/cubit.dart';
 import 'package:shop/layout/layout_screen.dart';
-import 'package:shop/login_Screen/login_screen.dart';
+import 'package:shop/modules/login_Screen/login_screen.dart';
 import 'package:shop/network/local/cache_helper.dart';
 import 'package:shop/network/remote/die_helper.dart';
 import 'package:shop/on_boarding.dart';
@@ -20,9 +20,9 @@ void main()async {
   token = CacheHelper.getData(key: 'token');
    if(onBoarding!=null){
      if(token!=null) {
-       widget= HomeScreen();
+       widget=const HomeScreen();
      } else {
-       widget= LoginScreen();
+       widget=const LoginScreen();
      }
    }
    else{

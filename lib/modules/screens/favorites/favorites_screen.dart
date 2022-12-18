@@ -5,10 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop/conponents/conponents.dart';
 import 'package:shop/layout/cubit/cubit.dart';
 import 'package:shop/layout/cubit/states.dart';
-import 'package:shop/style/color.dart';
 
 class FavoritesScreen extends StatelessWidget {
-   FavoritesScreen({Key? key}) : super(key: key);
+  const FavoritesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
