@@ -28,8 +28,7 @@ void main()async {
    else{
      widget=const OnBoarding();
    }
-  print(onBoarding);
-  print(token);
+
   runApp(MyApp(
 
     startWidget: widget,

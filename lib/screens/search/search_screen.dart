@@ -37,7 +37,7 @@ class SearchScreen extends StatelessWidget {
                             keyboardType: TextInputType.text ,
                             prefixIcon: const Icon(Icons.search),
                             label:'Search',
-                            OnFieldSubmitted: (String text)
+                            onFieldSubmitted: (String text)
                             {
                               ShopCubit.get(context).search(text);
                             }

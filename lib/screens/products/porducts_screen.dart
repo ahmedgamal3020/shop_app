@@ -54,6 +54,7 @@ class ProductsScreen extends StatelessWidget {
 
     );
   }
+
   Widget productsBuilder( HomeModel model,context,CategoriesModel? categoriesModel)=> SingleChildScrollView(
 
     physics:const  BouncingScrollPhysics(),
@@ -127,7 +128,8 @@ class ProductsScreen extends StatelessWidget {
           crossAxisCount: 2,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          childAspectRatio: 1/1.69,
+          childAspectRatio: 1/1.70,
+          padding:const  EdgeInsets.all(10),
 
           children:List.generate(model.data!.products!.length,
                   (index) => buildGridView(model.data!.products![index],context),
@@ -178,7 +180,6 @@ class ProductsScreen extends StatelessWidget {
     ],
   );
 
-
   Widget buildGridView(Products model,context)=>InkWell(
     onTap: (){
      productImage=model.image;
@@ -187,14 +188,13 @@ class ProductsScreen extends StatelessWidget {
      navigateTo(context,const ViewProduct());
     },
     child: SizedBox(
-      height: 150,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             children: [
               Container(
-                height: 220,
+                height: 170,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -227,7 +227,7 @@ class ProductsScreen extends StatelessWidget {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style:const  TextStyle(
-                    fontSize: 16.0,
+                    fontSize: 14.0,
                   ),
                 ),
                 const Spacer(),
@@ -238,29 +238,28 @@ class ProductsScreen extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style:const  TextStyle(
                         color: defaultColor,
-                        fontSize: 16.0
+                        fontSize: 14.0
                       ),
                     ),
                     const SizedBox(width: 8,),
                     if(model.oldPrice !=model.price)
                     Text('${model.oldPrice}',
                       style: TextStyle(
+                        fontSize: 10,
+
                         color: Colors.grey[900],
                         decoration: TextDecoration.lineThrough
                       ),
-
                     ),
                     const Spacer(),
-
                     IconButton(
                         onPressed:()
                         {
                          ShopCubit.get(context).changeFavorites(model.id!);
                         },
-
                         icon:ShopCubit.get(context).favorites[model.id]==true?
-                        const Icon(Icons.favorite):
-                        const Icon(Icons.favorite_outline)
+                        const Icon(Icons.favorite,size: 14,):
+                        const Icon(Icons.favorite_outline,size: 17,)
 
                     ),
 
@@ -268,7 +267,7 @@ class ProductsScreen extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     ),

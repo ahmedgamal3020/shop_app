@@ -42,8 +42,7 @@ class _OnBoardingState extends State<OnBoarding> {
   ];
   PageController pageController=PageController();
 
-  void submit()
-  {
+  void submit() {
     CacheHelper.saveData(key: 'onBoarding', value: true).then((value){
 
       if(value){

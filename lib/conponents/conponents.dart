@@ -2,10 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shop/layout/cubit/cubit.dart';
-import 'package:shop/models/favorites_model.dart';
-
 import 'package:shop/style/color.dart';
-
 
 Widget myDivider()=>Container(
   width: double.infinity,
@@ -31,7 +28,7 @@ Widget defaultTextFromFiled({
   @required TextInputType? keyboardType,
   Function(String)? onChanged,
   Function()? onTap,
-  void Function(String)? OnFieldSubmitted,
+  void Function(String)? onFieldSubmitted,
   @required Icon? prefixIcon,
   @required String? label,
   InputBorder? border,
@@ -48,14 +45,13 @@ Widget defaultTextFromFiled({
   keyboardType:keyboardType ,
   onChanged:onChanged ,
   onTap:onTap ,
-  onFieldSubmitted: OnFieldSubmitted,
+  onFieldSubmitted: onFieldSubmitted,
   maxLines:maxLines ,
   style: style,
   obscureText:obscureText,
   decoration:InputDecoration(
     prefixIcon: prefixIcon,
     suffixIcon:suffixIcon,
-
     label: Text(label!),
     border:border,
 
@@ -140,7 +136,7 @@ enum ToastState {success,error,warning}
 
 Widget buildListItemProducts( model,context)=> Padding(
   padding: const EdgeInsets.all(20.0),
-  child: Container(
+  child: SizedBox(
     height: 120,
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -213,8 +209,8 @@ Widget buildListItemProducts( model,context)=> Padding(
                       },
 
                       icon:ShopCubit.get(context).favorites[model.id]!?
-                        Icon(Icons.favorite):
-                        Icon(Icons.favorite_outline),
+                       const  Icon(Icons.favorite):
+                       const  Icon(Icons.favorite_outline),
 
                   ),
 
